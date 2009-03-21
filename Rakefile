@@ -4,7 +4,7 @@ require 'spec/rake/verify_rcov'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name        = "Using"
+    s.name        = "using"
     s.summary     = "Ruby File loading made easy"
     s.email       = "scott@railsnewbie.com"
     s.homepage    = "http://github.com/smtlaissezfaire/using"
