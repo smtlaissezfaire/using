@@ -4,7 +4,7 @@ module Using
   unless defined?(LOAD_SCHEMES)
     LOAD_SCHEMES = [:require, :load, :autoload]
 
-    class << self
+    module DefaultLoadSchemes
       def reset_default_load_scheme!
         @default_load_scheme = nil
       end
@@ -17,6 +17,8 @@ module Using
         @default_load_scheme ||= LOAD_SCHEMES.first
       end
     end
+
+    extend DefaultLoadSchemes
 
     def load_scheme
       @load_scheme ||= ::Using.default_load_scheme
