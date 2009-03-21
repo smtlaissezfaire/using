@@ -39,7 +39,7 @@ module Using
     end
 
     def using(const_name)
-      path = caller(1)[0].gsub(/\.rb.*$/, "")
+      path = File.expand_path(caller(1)[0].gsub(/\.rb.*$/, ""))
       file_name = const_name.to_s.pathize
 
       case load_scheme

@@ -41,7 +41,7 @@ describe Using do
   end
 
   def dirname
-    File.dirname(__FILE__)
+    File.expand_path(File.dirname(__FILE__))
   end
 
   def file_prefix
