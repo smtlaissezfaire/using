@@ -43,12 +43,9 @@ module Using
       file_name = const_name.to_s.pathize
 
       case load_scheme
-      when :require
-        require(File.join(path, file_name))
-      when :autoload
-        autoload(const_name, File.join(path, file_name))
-      when :load
-        load(File.join(path, "#{file_name}.rb"))
+        when :require   then require  File.join(path, file_name)
+        when :load      then load     File.join(path, "#{file_name}.rb")
+        when :autoload  then autoload const_name, File.join(path, file_name)
       end
     end
   end
