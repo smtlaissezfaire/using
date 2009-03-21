@@ -44,11 +44,11 @@ module Using
 
       case load_scheme
       when :require
-        require("#{path}/#{file_name}")
+        require(File.join(path, file_name))
       when :autoload
-        autoload(const_name, "#{path}/#{file_name}")
+        autoload(const_name, File.join(path, file_name))
       when :load
-        load("#{path}/#{file_name}.rb")
+        load(File.join(path, "#{file_name}.rb"))
       end
     end
   end
