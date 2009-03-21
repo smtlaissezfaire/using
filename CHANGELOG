@@ -1,0 +1,9 @@
+
+== HEAD
+
+- Use absolute paths instead of relative ones
+- Use File.join instead of string interpolation
+
+== 0.1.0
+
+- Import initial code from Ella.
