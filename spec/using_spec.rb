@@ -40,6 +40,14 @@ describe Using do
     end
   end
 
+  def dirname
+    File.dirname(__FILE__)
+  end
+
+  def file_prefix
+    "#{dirname}/using_spec"
+  end
+
   describe "with require" do
     before do
       @obj.stub!(:require)
@@ -47,12 +55,12 @@ describe Using do
     end
 
     it "should require the constant mapped from the file" do
-      @obj.should_receive(:require).with("#{File.dirname(__FILE__)}/using_spec/foo")
+      @obj.should_receive(:require).with("#{file_prefix}/foo")
       @obj.using :Foo
     end
 
     it "should use underscores for capitalizations" do
-      @obj.should_receive(:require).with("#{File.dirname(__FILE__)}/using_spec/foo_bar")
+      @obj.should_receive(:require).with("#{file_prefix}/foo_bar")
       @obj.using :FooBar
     end
   end
@@ -64,7 +72,7 @@ describe Using do
     end
 
     it "should autoload the constant mapped from the file" do
-      @obj.should_receive(:autoload).with(:Foo, "#{File.dirname(__FILE__)}/using_spec/foo")
+      @obj.should_receive(:autoload).with(:Foo, "#{file_prefix}/foo")
       @obj.using :Foo
     end
   end
@@ -76,7 +84,7 @@ describe Using do
     end
 
     it "should load the constant mapped from the file" do
-      @obj.should_receive(:load).with("#{File.dirname(__FILE__)}/using_spec/foo.rb")
+      @obj.should_receive(:load).with("#{file_prefix}/foo.rb")
       @obj.using :Foo
     end
   end
@@ -91,7 +99,7 @@ describe Using do
     end
 
     it "should use the load scheme given in the block" do
-      @obj.should_receive(:load).with("#{File.dirname(__FILE__)}/using_spec/foo.rb")
+      @obj.should_receive(:load).with("#{file_prefix}/foo.rb")
 
       @obj.instance_eval do
         with_load_scheme(:load) do
@@ -102,7 +110,7 @@ describe Using do
 
     it "should use the correct load scheme" do
       @obj.with_load_scheme(:autoload) do
-        @obj.should_receive(:autoload).with(:Foo, "#{File.dirname(__FILE__)}/using_spec/foo")
+        @obj.should_receive(:autoload).with(:Foo, "#{file_prefix}/foo")
         @obj.using :Foo
       end
     end
