@@ -44,6 +44,10 @@ Or, say, you need to require just one file, but autoload the rest:
     using :Application
   end
 
+== Dependencies:
+
+   facets
+
 == Copyright
 
 This software is released under the MIT & GPL Licenses.
