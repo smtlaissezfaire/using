@@ -1,4 +1,8 @@
-require "facets/string/pathize"
+begin
+  require "facets/string/pathize"
+rescue LoadError
+  raise LoadError, "You must install the facets gem to use the 'Using' package"
+end
 
 module Using
   unless defined?(LOAD_SCHEMES)
