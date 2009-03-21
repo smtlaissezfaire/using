@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.date = %q{2009-03-21}
   s.description = %q{TODO}
   s.email = %q{scott@railsnewbie.com}
-  s.files = ["Using.gemspec", "VERSION.yml", "lib/using.rb", "spec/spec.opts", "spec/spec_helper.rb", "spec/using_spec.rb"]
+  s.extra_rdoc_files = ["README"]
+  s.files = ["GPL3.txt", "Using.gemspec", "VERSION.yml", "lib/using.rb", "spec/spec.opts", "spec/spec_helper.rb", "spec/using_spec.rb", "README"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/smtlaissezfaire/using}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
