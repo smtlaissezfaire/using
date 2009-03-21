@@ -48,5 +48,5 @@ Or, say, you need to require just one file, but autoload the rest:
 
 This software is released under the MIT & GPL Licenses.
 
-Copyright 2009 Scott Taylor <scott@railsnewbie.com>
+Copyright (c) 2009 Scott Taylor <scott@railsnewbie.com>
 
