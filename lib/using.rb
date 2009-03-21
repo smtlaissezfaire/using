@@ -53,4 +53,3 @@ module Using
     end
   end
 end
-
