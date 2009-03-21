@@ -4,7 +4,7 @@
 Automatically require files based on constant name and file name.  Saves you the
 hassle of adding to $LOAD_PATH or using File.dirname(__FILE__) all over the place.
 
-Swap easily between require, load, and autoload within a drop of the hat.
+Also allows you to swap easily between require, load, and autoload within a drop of the hat.
 
 
 == Usage
