@@ -1,0 +1,52 @@
+
+= Using
+
+Automatically require files based on constant name and file name.  Saves you the
+hassle of adding to $LOAD_PATH or using File.dirname(__FILE__) all over the place.
+
+Swap easily between require, load, and autoload within a drop of the hat.
+
+
+== Usage
+
+in a file named ella.rb:
+
+  module Ella
+    extend Using
+    using :Foo     #=> require "ella/foo"
+    using :FooBar  #=> require "ella/foo_bar"
+  end
+
+The default load scheme is require.  You can change the load scheme globally
+with Using.default_load_scheme = :autoload or Using.default_load_scheme = :load
+
+  Using.default_load_scheme = :autoload
+  
+  using :Foo    #=> autoload :Foo,    "ella/foo"
+  using :FooBar #=> autoload :FooBar, "ella/foo_bar"
+
+Or, say, you need to require just one file, but autoload the rest:
+
+  module MyProj
+    Using.default_load_scheme = :autoload
+    extend Using
+   
+    with_load_scheme :require do
+      using :Errors
+    end
+    
+    using :Routing
+    using :Action
+    using :Support
+    using :Configuration
+    using :RenderingEngines
+    using :ApplicationHelpers
+    using :Application
+  end
+
+== Copyright
+
+This software is released under the MIT & GPL Licenses.
+
+Copyright 2009 Scott Taylor <scott@railsnewbie.com>
+
