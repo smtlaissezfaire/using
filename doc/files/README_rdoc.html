@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: README.rdoc [Using]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <div class='name'>README.rdoc</div>
+        <div class='paths'>
+          README.rdoc
+          (<a href="http://github.com/mislav/will_paginate/tree/master/README.rdoc">view online</a>)
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>Sun Jun 14 17:17:29 -0400 2009</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="../classes/Using.html">Using</a></h1>
+            <p>
+            Automatically require files based on constant name and file name. Saves you
+            the hassle of adding to $LOAD_PATH or using File.dirname(<em>FILE</em>) all
+            over the place.
+            </p>
+            <p>
+            Also allows you to swap easily between require, load, and autoload within a
+            drop of the hat.
+            </p>
+            <h2>Usage</h2>
+            <p>
+            in a file named ella.rb:
+            </p>
+            <pre>module Ella&#x000A;  extend Using&#x000A;  using :Foo     #=&gt; require &quot;ella/foo&quot;&#x000A;  using :FooBar  #=&gt; require &quot;ella/foo_bar&quot;&#x000A;end</pre>
+            <p>
+            The default load scheme is require. You can change the load scheme globally
+            with Using.default_load_scheme = :autoload or Using.default_load_scheme =
+            :load
+            </p>
+            <pre>Using.default_load_scheme = :autoload&#x000A;&#x000A;using :Foo    #=&gt; autoload :Foo,    &quot;ella/foo&quot;&#x000A;using :FooBar #=&gt; autoload :FooBar, &quot;ella/foo_bar&quot;</pre>
+            <p>
+            Or, say, you need to require just one file, but autoload the rest:
+            </p>
+            <pre>module MyProj&#x000A;  Using.default_load_scheme = :autoload&#x000A;  extend Using&#x000A;&#x000A;  with_load_scheme :require do&#x000A;    using :Errors&#x000A;  end&#x000A;&#x000A;  using :Routing&#x000A;  using :Action&#x000A;  using :Support&#x000A;  using :Configuration&#x000A;  using :RenderingEngines&#x000A;  using :ApplicationHelpers&#x000A;  using :Application&#x000A;end</pre>
+            <h2>Dependencies:</h2>
+            <pre>facets</pre>
+            <h2>Copyright</h2>
+            <p>
+            This software is released under the MIT &amp; GPL Licenses.
+            </p>
+            <p>
+            Copyright &#169; 2009 Scott Taylor <scott@railsnewbie.com>
+            </p>
+          </div>
+          <div id='section'>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+    46.5: flog total
+     5.2: flog/method average
+
+    25.1: Using#using
+     5.3: Using#with_load_scheme
