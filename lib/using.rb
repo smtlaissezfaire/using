@@ -44,9 +44,9 @@ module Using
       self.load_scheme = old_scheme
     end
 
-    def using(const_name)
+    def using(const_name, options={})
       path = File.expand_path(caller(1)[0].gsub(/\.rb.*$/, ""))
-      file_name = const_name.to_s.pathize
+      file_name = options[:file] || const_name.to_s.pathize
 
       case load_scheme
         when :require   then require  File.join(path, file_name)

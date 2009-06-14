@@ -63,6 +63,11 @@ describe Using do
       @obj.should_receive(:require).with("#{file_prefix}/foo_bar")
       @obj.using :FooBar
     end
+
+    it "should allow a custom filename" do
+      @obj.should_receive(:require).with("#{file_prefix}/foobar.pb")
+      @obj.using :FooBar, :file => "foobar.pb"
+    end
   end
 
   describe "with autoload" do
@@ -75,6 +80,11 @@ describe Using do
       @obj.should_receive(:autoload).with(:Foo, "#{file_prefix}/foo")
       @obj.using :Foo
     end
+
+    it "should allow a custom filename" do
+      @obj.should_receive(:autoload).with(:FooBar, "#{file_prefix}/foobar.pb")
+      @obj.using :FooBar, :file => "foobar.pb"
+    end
   end
 
   describe "when using load" do
@@ -86,6 +96,11 @@ describe Using do
     it "should load the constant mapped from the file" do
       @obj.should_receive(:load).with("#{file_prefix}/foo.rb")
       @obj.using :Foo
+    end
+
+    it "should allow a custom filename, tacking on .rb" do
+      @obj.should_receive(:load).with("#{file_prefix}/foobar.pb.rb")
+      @obj.using :FooBar, :file => "foobar.pb"
     end
   end
 
