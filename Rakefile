@@ -1,5 +1,6 @@
 require 'spec/rake/spectask'
 require 'spec/rake/verify_rcov'
+require 'hanna/rdoctask'
 
 begin
   require 'jeweler'
@@ -38,6 +39,19 @@ end
 desc "Create the html specdoc"
 Spec::Rake::SpecTask.new(:specdoc => :create_doc_directory) do |t|
   t.spec_opts = ["--format", "html:doc/specdoc.html"]
+end
+
+desc 'Generate RDoc.'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = doc_directory
+  rdoc.title    = 'Using'
+  rdoc.options << '--line-numbers' << '--inline-source'
+
+  rdoc.options << '--webcvs=http://github.com/mislav/will_paginate/tree/master/'
+
+  ["README.rdoc", "GPL3.txt", "MIT_LICENSE", "lib/**/*.rb"].each do |file|
+    rdoc.rdoc_files.include(file)
+  end
 end
 
 desc 'Create the specdoc + rdoc'
