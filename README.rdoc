@@ -48,6 +48,10 @@ Or, say, you need to require just one file, but autoload the rest:
 
    facets
 
+== Source:[http://github.com/smtlaissezfaire/using/tree/master]
+
+  git://github.com/smtlaissezfaire/using.git
+
 == Copyright
 
 This software is released under the MIT & GPL Licenses.
