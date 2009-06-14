@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/smtlaissezfaire/using}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.3}
+  s.rubygems_version = %q{1.3.4}
   s.summary = %q{Ruby File loading made easy}
   s.test_files = [
     "spec/spec_helper.rb",
