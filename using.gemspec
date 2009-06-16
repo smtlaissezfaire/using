@@ -2,18 +2,19 @@
 
 Gem::Specification.new do |s|
   s.name = %q{using}
-  s.version = "0.1.3"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Scott Taylor"]
-  s.date = %q{2009-06-14}
+  s.date = %q{2009-06-16}
   s.description = %q{TODO}
   s.email = %q{scott@railsnewbie.com}
   s.extra_rdoc_files = [
-    "README"
+    "README.rdoc"
   ]
   s.files = [
     "GPL3.txt",
+    "README.rdoc",
     "Rakefile",
     "VERSION.yml",
     "lib/using.rb",
