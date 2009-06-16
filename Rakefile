@@ -9,8 +9,16 @@ begin
     s.summary     = "Ruby File loading made easy"
     s.email       = "scott@railsnewbie.com"
     s.homepage    = "http://github.com/smtlaissezfaire/using"
-    s.description = "TODO"
     s.authors     = ["Scott Taylor"]
+    s.description = <<-DESC
+      Flexibly load ruby files.
+       
+      This gem will automatically add File.expand_path(File.dirname(__FILE__) + "/my_mod/my_file")
+      with a simple declaration.  Uses non-obtrusive methods - it won't polute Object
+      or Kernel (although you are free to, if you so choose).
+       
+      This also allows you to switch between require, load, and autoload on a project wide basis.
+    DESC
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"

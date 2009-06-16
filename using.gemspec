@@ -7,7 +7,14 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Scott Taylor"]
   s.date = %q{2009-06-16}
-  s.description = %q{TODO}
+  s.description = %q{      Flexibly load ruby files.
+       
+      This gem will automatically add File.expand_path(File.dirname(__FILE__) + "/my_mod/my_file")
+      with a simple declaration.  Uses non-obtrusive methods - it won't polute Object
+      or Kernel (although you are free to, if you so choose).
+       
+      This also allows you to switch between require, load, and autoload on a project wide basis.
+}
   s.email = %q{scott@railsnewbie.com}
   s.extra_rdoc_files = [
     "README.rdoc"
