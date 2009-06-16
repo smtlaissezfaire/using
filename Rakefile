@@ -19,6 +19,7 @@ begin
        
       This also allows you to switch between require, load, and autoload on a project wide basis.
     DESC
+    s.add_dependency "facets"
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"

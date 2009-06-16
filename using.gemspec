@@ -20,14 +20,18 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    "GPL3.txt",
-    "README.rdoc",
-    "Rakefile",
-    "VERSION.yml",
-    "lib/using.rb",
-    "spec/spec.opts",
-    "spec/spec_helper.rb",
-    "spec/using_spec.rb"
+    ".gitignore",
+     "CHANGELOG",
+     "GPL3.txt",
+     "MIT_LICENSE",
+     "README.rdoc",
+     "Rakefile",
+     "VERSION.yml",
+     "lib/using.rb",
+     "spec/spec.opts",
+     "spec/spec_helper.rb",
+     "spec/using_spec.rb",
+     "using.gemspec"
   ]
   s.homepage = %q{http://github.com/smtlaissezfaire/using}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -36,7 +40,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Ruby File loading made easy}
   s.test_files = [
     "spec/spec_helper.rb",
-    "spec/using_spec.rb"
+     "spec/using_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -44,8 +48,11 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<facets>, [">= 0"])
     else
+      s.add_dependency(%q<facets>, [">= 0"])
     end
   else
+    s.add_dependency(%q<facets>, [">= 0"])
   end
 end
