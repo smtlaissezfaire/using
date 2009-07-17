@@ -32,7 +32,7 @@ module Using
       if LOAD_SCHEMES.include?(load_scheme)
         @load_scheme = load_scheme
       else
-        raise
+        raise LoadError, "#{load_scheme} is not a valid load method"
       end
     end
 

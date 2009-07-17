@@ -29,7 +29,13 @@ describe Using do
     it "should raise an error when setting the load scheme to something else" do
       lambda {
         @obj.load_scheme = :foo
-      }.should raise_error
+      }.should raise_error(LoadError, "foo is not a valid load method")
+    end
+
+    it "should raise an error with the load scheme used" do
+      lambda {
+        @obj.load_scheme = :bar
+      }.should raise_error(LoadError, "bar is not a valid load method")
     end
 
     it "should be able to set the load_scheme as a class method" do
